@@ -2,8 +2,10 @@
 @import '../styles/colors.scss';
 
 .header {
-  background-color: $colMain;
+  //background-color: $colMain;
+  background-color: transparent;
   width: 100%;
+  position: fixed;
 }
 
 .container {
@@ -25,7 +27,7 @@
 }
 
 .navLinks {
-
+  text-transform: uppercase;
 }
 
 .navLink {
