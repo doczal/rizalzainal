@@ -10,4 +10,26 @@
   max-width: $max-content-width;
   width: 100%;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logoContainer {
+  width: 28px;
+}
+
+.logo {
+  width: 100%;
+}
+
+.navLinks {
+
+}
+
+.navLink {
+  padding: 0 1rem;
+  color: white;
+  text-decoration: none;
 }
