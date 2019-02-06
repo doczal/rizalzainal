@@ -1,0 +1,21 @@
+@import '../styles/globals.scss';
+@import '../styles/colors.scss';
+
+.heading {
+  position: relative;
+  color: $colText1;
+  font-size: 3.2rem;
+  text-align: center;
+  display: inline-block;
+
+  &::after {
+    position: absolute;
+    content: '';
+    height: 8px;
+    width: 10rem;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $colMain;
+  }
+}
