@@ -28,6 +28,7 @@ const IndexPage = () => (
         <div className={styles.projectsContainer}>
           <ProjectCard />
           <ProjectCard />
+          <ProjectCard />
         </div>
       </Body>
     </section>
