@@ -11,8 +11,12 @@ const ProjectCard = () => (
       </div>
       <div className={styles.projectInfo}>
         <h3 className={styles.projectTitle}>South West Allied Therapies</h3>
-        <div className={styles.projectYear}>Website</div>
         <p className={styles.projectDesc}>This is a project.</p>
+        <div className={styles.projectTags}>
+          <span className={styles.tag}>Web Dev</span>
+          <span className={styles.tag}>Wordpress</span>
+          <span className={styles.tag}>Logo Design</span>
+        </div>
       </div>
     </div>
   </div>
