@@ -74,10 +74,14 @@
   }
 }
 
-.projectSection {
+.projectsSection {
   overflow: auto;
   background-color: $colBG1;
 }
 
 .projectsContainer {
+  display: flex;
+  padding: 3rem 0;
+  justify-content: center;
+  flex-wrap: wrap;
 }

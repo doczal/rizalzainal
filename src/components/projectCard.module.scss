@@ -1,0 +1,32 @@
+@import '../styles/globals.scss';
+@import '../styles/colors.scss';
+
+.cardContainer {
+  padding: 1.5rem;
+  flex-basis: 50%;
+  @media screen and (max-width: $breakpoint-sm) {
+    flex-basis: 100%;
+  }
+}
+
+.projectCard {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.projectImage {
+  position: relative;
+  width: 40%;
+  height: 0;
+  padding-bottom: 40%;
+  background: linear-gradient(180deg, $colMain, $colMain2);
+  background-color: $colMain;
+}
+
+.projectInfo {
+  padding-left: 1.5rem; 
+}

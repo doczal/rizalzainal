@@ -22,11 +22,13 @@ const IndexPage = () => (
       </div>
     </div>
     
-    <section className={styles.projectSection}>
+    <section className={styles.projectsSection}>
       <Body>
         <Heading>Projects</Heading>
-        <ProjectCard />
-        <ProjectCard />
+        <div className={styles.projectsContainer}>
+          <ProjectCard />
+          <ProjectCard />
+        </div>
       </Body>
     </section>
   </Layout>
