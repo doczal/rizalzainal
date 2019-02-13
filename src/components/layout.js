@@ -38,10 +38,7 @@ Layout.propTypes = {
   data: PropTypes.shape({
     site: PropTypes.shape({
       siteMetadata: PropTypes.shape({
-        navLinks: PropTypes.shape({
-          name: PropTypes.string.isRequired,
-          slug: PropTypes.string.isRequired,
-        }).isRequired,
+        navLinks: PropTypes.array.isRequired,
       }).isRequired,
     }).isRequired,
   }).isRequired,

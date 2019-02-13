@@ -6,7 +6,7 @@ const Heading = ({ children }) => (
   <h1 className={styles.heading}>{children}</h1>
 )
 
-Heading.PropTypes = {
+Heading.propTypes = {
   children: PropTypes.node.isRequired,
 }
 

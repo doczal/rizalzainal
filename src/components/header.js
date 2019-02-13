@@ -11,8 +11,8 @@ const Header = ({ navLinks }) => (
         <img src={logo} alt="Rizal Logo" className={styles.logo}/>
       </div>
       <nav className={styles.navLinks}>
-        {navLinks.map((navLink) => (
-          <Link className={styles.navLink} to={`/${ navLink.slug }`}>{navLink.name}</Link>
+        {navLinks.map((navLink, i) => (
+          <Link key={i} className={styles.navLink} to={`/${ navLink.slug }`}>{navLink.name}</Link>
         ))}
       </nav>
     </div>

@@ -11,13 +11,21 @@ import Heading from '../components/heading'
 import heroImage from '../images/cubes.svg'
 import styles from './home.module.scss'
 
+import swat from '../images/swat.jpg'
+import etc from '../images/etc.jpg'
+import mirado from '../images/mirado.jpg'
+import rs from '../images/randomstream.jpg'
+import pt from '../images/poketyper.jpg'
+import ninjet from '../images/ninjet.jpg'
+import sng from '../images/sitngo.jpg'
+
 const IndexPage = () => (
   <Layout>
     <div className={styles.hero}>
       <div className={styles.heroContainer}>
         <div className={styles.mainDescription}>
           <h1 className={styles.headline}>I am <span>Rizal Zainal</span>,<br/>Front End Developer.</h1>
-          <p className={styles.subHeadline}>The grand plan for this tutorial is to build an app that helps a staffing agency manage its stable of heroes.</p>
+          <p className={styles.subHeadline}>The grand plan for this bla bla bla bla bla bla bla bla lorem ipsum.</p>
         </div>
       </div>
     </div>
@@ -26,9 +34,13 @@ const IndexPage = () => (
       <Body>
         <Heading>Projects</Heading>
         <div className={styles.projectsContainer}>
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
+          <ProjectCard image={pt} desc="A typing web game based on React with user authentication and leaderboards via Firebase." />
+          <ProjectCard image={rs} />
+          <ProjectCard image={mirado} />
+          <ProjectCard image={etc} />
+          <ProjectCard image={ninjet} />
+          <ProjectCard image={sng} />
+          <ProjectCard image={swat} />
         </div>
       </Body>
     </section>
