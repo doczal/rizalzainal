@@ -34,7 +34,7 @@ const IndexPage = () => (
       <Body>
         <Heading>Projects</Heading>
         <div className={styles.projectsContainer}>
-          <ProjectCard image={pt} desc="A typing web game based on React with user authentication and leaderboards via Firebase." />
+          <ProjectCard image={pt} desc="A typing web game based on React with user authentication and leaderboards via Firebase. This is the ultimate project." />
           <ProjectCard image={rs} />
           <ProjectCard image={mirado} />
           <ProjectCard image={etc} />
