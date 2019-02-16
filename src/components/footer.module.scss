@@ -1,0 +1,16 @@
+@import '../styles/globals.scss';
+@import '../styles/colors.scss';
+
+
+.footer {
+  background-color: $colMain2;
+  padding: 2.5rem 1.5rem;
+  font-size: 1.4rem;
+  text-align: center;
+  box-shadow: 0px -1px 6px $colShadow;
+  color: white;
+
+  a {
+    color: $colAlt1;
+  }
+}
