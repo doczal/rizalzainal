@@ -3,6 +3,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import Header from './header'
+import Footer from './footer'
 import '../styles/normalize.css'
 import './layout.scss'
 
@@ -12,7 +13,7 @@ const Layout = ({ data, children }) => (
       navLinks={data.site.siteMetadata.navLinks}
     />
     {children}
-    <footer></footer>
+    <Footer />
   </>
 )
 

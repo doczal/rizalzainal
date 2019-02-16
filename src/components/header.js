@@ -44,8 +44,8 @@ class Header extends Component {
             <img src={logo} alt="Rizal Logo" className={styles.logo}/>
           </div>
           <nav className={styles.navLinks}>
-            {navLinks.map((navLink, i) => (
-              <Link key={i} className={styles.navLink} to={`/${ navLink.slug }`}>{navLink.name}</Link>
+            {navLinks.map((navLink) => (
+              <Link key={navLink.slug} className={styles.navLink} to={`/${ navLink.slug }`}>{navLink.name}</Link>
             ))}
           </nav>
         </div>
@@ -55,7 +55,10 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  navLinks: PropTypes.array,
+  navLinks: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired,
+  })).isRequired,
 }
 
 export default Header

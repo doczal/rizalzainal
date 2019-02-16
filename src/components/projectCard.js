@@ -2,19 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './projectCard.module.scss'
 
-const ProjectCard = ({ image, desc }) => (
+const ProjectCard = ({ title, image, imageAlt, desc, tags }) => (
   <div className={styles.cardContainer}>
     <div className={styles.projectCard}>
       <div className={styles.projectImage}>
-        <img src={image} alt="swat"/>
+        <img src={image} alt={imageAlt}/>
       </div>
       <div className={styles.projectInfo}>
-        <h3 className={styles.projectTitle}>South West Allied Therapies</h3>
+        <h3 className={styles.projectTitle}>{title}</h3>
         <p className={styles.projectDesc}>{desc}</p>
         <div className={styles.projectTags}>
-          <span className={styles.tag}>Web Dev</span>
-          <span className={styles.tag}>Wordpress</span>
-          <span className={styles.tag}>Logo Design</span>
+          {tags.map((tag) => (
+            <span key={tag} className={styles.tag}>{tag}</span>
+          ))}
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Body from '../components/body'
@@ -6,15 +7,7 @@ import Image from '../components/image'
 import SEO from '../components/seo'
 import ProjectCard from '../components/projectCard'
 import Heading from '../components/heading'
-import heroImage from '../images/cubes.svg'
 import styles from './home.module.scss'
-import swat from '../images/swat.jpg'
-import etc from '../images/etc.jpg'
-import mirado from '../images/mirado.jpg'
-import rs from '../images/randomstream.jpg'
-import pt from '../images/poketyper.jpg'
-import ninjet from '../images/ninjet.jpg'
-import sng from '../images/sitngo.jpg'
 
 const IndexPage = ({
   data: {
@@ -37,7 +30,14 @@ const IndexPage = ({
         <Heading>Projects</Heading>
         <div className={styles.projectsContainer}>
           {edges.map(({ node }) => (
-            <ProjectCard image={pt} desc={node.description}/>
+            <ProjectCard
+              key={node.id}
+              title={node.title}
+              image={node.thumbnail.file.url}
+              imageAlt={node.thumbnail.description}
+              desc={node.description}
+              tags={node.tags}
+            />
           ))}
         </div>
       </Body>
@@ -48,7 +48,24 @@ const IndexPage = ({
 export default IndexPage
 
 IndexPage.propTypes = {
-
+  data: PropTypes.shape({
+    allContentfulProject: PropTypes.shape({
+      edges: PropTypes.arrayOf(PropTypes.shape({
+        node: PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          title: PropTypes.string.isRequired,
+          thumbnail: PropTypes.shape({
+            description: PropTypes.string.isRequired,
+            file: PropTypes.shape({
+              url: PropTypes.string.isRequired,
+            }).isRequired,
+          }).isRequired,
+          description: PropTypes.string.isRequired,
+          tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+        }).isRequired,
+      })).isRequired,
+    }).isRequired,
+  }).isRequired,
 }
 
 export const pageQuery = graphql`
@@ -56,7 +73,14 @@ export const pageQuery = graphql`
     allContentfulProject {
       edges {
         node {
+          id,
           title,
+          thumbnail {
+            description,
+            file {
+              url,
+            },
+          },
           description,
           tags,
         }
