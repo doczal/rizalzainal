@@ -41,7 +41,7 @@ class Header extends Component {
       <header className={classNames(styles.header, scroll ? styles.scroll : null)}>
         <div className={styles.container}>
           <div className={styles.logoContainer}>
-            <img src={logo} alt="Rizal Logoz" className={styles.logo}/>
+            <img src={logo} alt="Rizal Logo" className={styles.logo}/>
           </div>
           <nav className={styles.navLinks}>
             {navLinks.map((navLink, i) => (
