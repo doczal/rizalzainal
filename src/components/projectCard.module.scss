@@ -6,6 +6,8 @@ $breakpoint-1: 960px;
 .cardContainer {
   padding: 2rem;
   flex-basis: 50%;
+  text-decoration: none;
+  color: $colText1;
 
   @media screen and (max-width: $breakpoint-sm) {
     flex-basis: 80%;
@@ -24,7 +26,6 @@ $breakpoint-1: 960px;
   overflow: auto;
   box-shadow: 0px 0px 6px $colShadow;
   height: 100%;
-  cursor: pointer;
   transition-duration: 0.2s;
   transition-property: box-shadow, transform;
   transition-timing-function: ease-out;

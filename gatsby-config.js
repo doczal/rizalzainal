@@ -26,13 +26,10 @@ module.exports = {
     author: `Rizal Zainal`,
     navLinks: [{
       name: `Projects`,
-      slug: `projects`,
+      slug: `#projects`,
     }, {
       name: `About`,
       slug: `about`,
-    }, {
-      name: `Contact`,
-      slug: `contact`,
     }],
   },
   plugins: [

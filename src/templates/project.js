@@ -8,32 +8,45 @@ import Body from '../components/body'
 
 const Project = ({
   data: {
-    contentfulProject
+    contentfulProject: {
+      title,
+      date,
+      projectType,
+      tools,
+      body,
+    },
   },
 }) => (
   <Layout>
     <header className={styles.projectHeader}>
-      <Heading alt>{contentfulProject.title}</Heading>
+      <Heading alt>{title}</Heading>
       <div className={styles.projectInfo}>
-        <div className={styles.subInfo}>
-          <h4 className={styles.subTitle}>Year</h4>
-          <div className={styles.subDesc}>{contentfulProject.date}</div>
+        <div className={styles.subInfoContainer}>
+          <div className={styles.subInfo}>
+            <h4 className={styles.subTitle}>Year</h4>
+            <div className={styles.subDesc}>{date}</div>
+          </div>
+          <div className={styles.subInfo}>
+            <h4 className={styles.subTitle}>Project Type</h4>
+            <div className={styles.subDesc}>{projectType}</div>
+          </div>
+          <div className={styles.subInfo}>
+            <h4 className={styles.subTitle}>Tools and Tech</h4>
+            <div className={styles.subDesc}>{tools.join(', ')}</div>
+          </div>
         </div>
-        <div className={styles.subInfo}>
-          <h4 className={styles.subTitle}>Project Type</h4>
-          <div className={styles.subDesc}>{contentfulProject.projectType}</div>
-        </div>
-        <div className={styles.subInfo}>
-          <h4 className={styles.subTitle}>Tools and Tech</h4>
-          <div className={styles.subDesc}>{contentfulProject.tools.join(', ')}</div>
+        <div className={styles.projectLinks}>
+          <a className={styles.projectLink} href="#">View Project</a>
+          <a className={styles.projectLink} href="#">View Source</a>
         </div>
       </div>
     </header>
     <div className={styles.background}>
       <Body className={styles.contentContainer}>
-        <div className={styles.content}>
-          {}
-        </div>
+        <div
+          dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }}
+          className={styles.content}
+        />
       </Body>
     </div>
   </Layout>
@@ -48,6 +61,11 @@ export const pageQuery = graphql`
       date(formatString: "YYYY")
       projectType
       tools
+      body {
+        childMarkdownRemark {
+          html
+        }
+      }
     }
   }
 `

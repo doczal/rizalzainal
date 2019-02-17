@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './projectCard.module.scss'
+import { Link } from 'gatsby'
 
-const ProjectCard = ({ title, image, imageAlt, desc, tags }) => (
-  <div className={styles.cardContainer}>
+const ProjectCard = ({ title, image, imageAlt, desc, tags, slug }) => (
+  <Link to={slug} className={styles.cardContainer}>
     <div className={styles.projectCard}>
       <div className={styles.projectImage}>
         <img src={image} alt={imageAlt}/>
@@ -18,7 +19,7 @@ const ProjectCard = ({ title, image, imageAlt, desc, tags }) => (
         </div>
       </div>
     </div>
-  </div>
+  </Link>
 )
 
 ProjectCard.propTypes = {

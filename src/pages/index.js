@@ -25,7 +25,7 @@ const IndexPage = ({
         </div>
       </div>
     </div>
-    <section className={styles.projectsSection}>
+    <section id="projects" className={styles.projectsSection}>
       <Body>
         <Heading>Projects</Heading>
         <div className={styles.projectsContainer}>
@@ -37,6 +37,7 @@ const IndexPage = ({
               imageAlt={node.thumbnail.description}
               desc={node.description}
               tags={node.tags}
+              slug={node.slug}
             />
           ))}
         </div>
@@ -75,6 +76,7 @@ export const pageQuery = graphql`
         node {
           id,
           title,
+          slug,
           thumbnail {
             description,
             file {
