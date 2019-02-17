@@ -17,4 +17,11 @@
     transform: translateX(-50%);
     background-color: $colMain;
   }
+
+  &.alt {
+    color: white;
+    &::after {
+      background-color: $colAlt1;
+    }
+  }
 }
