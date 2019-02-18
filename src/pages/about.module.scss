@@ -1,0 +1,98 @@
+@import '../styles/globals.scss';
+@import '../styles/colors.scss';
+
+.aboutHeader {
+  position: relative;
+  z-index: 50;
+  background: linear-gradient(-90deg, $colMain, $colMain2);
+  background-color: $colMain;
+  width: 100%;
+  padding: 5rem 2rem 2rem;
+  text-align: center;
+  overflow: auto;
+}
+
+.aboutDesc {
+  color: white;
+  font-size: 2.4rem;
+  max-width: $max-content-width;
+  padding: 3rem 5rem;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.skillsSection {
+  width: 100%;
+  background-color: $colBG1;
+  padding-top: 2rem;
+}
+
+.skillsContainer {
+  display: flex;
+  padding-top: 2rem;
+}
+
+.skillCard {
+  background-color: white;
+  box-shadow: 0px 0px 6px $colShadow;
+  margin: 1rem;
+  border-radius: 8px;
+  overflow: auto;
+
+  &.current {
+    flex-basis: 60%;
+  }
+
+  &.todo {
+    flex-basis: 40%;
+
+    .cardTitle {
+      background-color: $colAlt3;
+    }
+  }
+}
+
+.cardTitle {
+  background-color: $colAlt2;
+  width: 100%;
+  margin: 0;
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.skillList {
+  padding: 2rem 1.5rem;
+}
+
+.skillItem {
+  display: inline-block;
+  background-color: $colBG1;
+  padding: 0.8rem;
+  margin: 0.4rem;
+  color: $colText1;
+  border-radius: 5px;
+}
+
+.expSection {
+  width: 100%;
+  background-color: $colBG1;
+  padding: 2rem 0;
+}
+
+.contactSection {
+  background: linear-gradient(-90deg, $colMain, $colMain2);
+  background-color: $colMain;
+  width: 100%;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contactDesc {
+  color: white;
+  font-size: 2.4rem;
+
+  span {
+    font-weight: bold;
+    color: $colAlt1;
+  }
+}
