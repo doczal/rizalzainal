@@ -49,6 +49,43 @@ const AboutPage = () => (
     <section className={styles.expSection}>
       <Body>
         <Heading subHeading>Experience</Heading>
+        <div className={styles.expContainer}>
+          <div className={styles.expCard}>
+            <div className={styles.expInfo}>
+              <div className={styles.position}>
+                <h3>Wunderman</h3>
+                <span>Front End Developer</span>
+              </div>
+              <div className={styles.year}>
+                2017 - 2019
+              </div>
+            </div>
+            <div className={styles.expDetails}>
+              <ul className={styles.roleList}>
+                <li>Developed and maintained websites for various clients</li>
+                <li>Developed HTML emails for sending out</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className={styles.expCard}>
+            <div className={styles.expInfo}>
+              <div className={styles.position}>
+                <h3>Wunderman</h3>
+                <span>Front End Developer</span>
+              </div>
+              <div className={styles.year}>
+                2017 - 2019
+              </div>
+            </div>
+            <div className={styles.expDetails}>
+              <ul className={styles.roleList}>
+                <li>Developed and maintained websites for various clients</li>
+                <li>Developed HTML emails for sending out</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </Body>
     </section>
     <section className={styles.contactSection}>
