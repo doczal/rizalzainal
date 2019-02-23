@@ -8,11 +8,24 @@ import Heading from '../components/heading'
 import classNames from 'classnames'
 import styles from './about.module.scss'
 
-const AboutPage = () => (
+const AboutPage = ({
+  data: {
+    contentfulAboutPage: {
+      title,
+      description,
+      about,
+      currentSkills,
+      toDoSkills,
+    },
+    allContentfulExperience: {
+      edges,
+    },
+  },
+}) => (
   <Layout>
     <header className={styles.aboutHeader}>
       <Heading alt>About</Heading>
-      <p className={styles.aboutDesc}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+      <p className={styles.aboutDesc}>{about.childMarkdownRemark.html}</p>
     </header>
     <section className={styles.skillsSection}>
       <Body>
@@ -21,30 +34,21 @@ const AboutPage = () => (
           <div className={classNames(styles.cardContainer, styles.current)}>
             <div className={styles.skillCard}>
               <h3 className={styles.cardTitle}>Experienced In</h3>
-              <div className={styles.skillList}>
-                <span className={styles.skillItem}>HTML/CSS</span>
-                <span className={styles.skillItem}>JavaScript ES6+</span>
-                <span className={styles.skillItem}>React</span>
-                <span className={styles.skillItem}>Node.js</span>
-                <span className={styles.skillItem}>Photoshop</span>
-                <span className={styles.skillItem}>HTML/CSS</span>
-                <span className={styles.skillItem}>JavaScript ES6+</span>
-                <span className={styles.skillItem}>React</span>
-                <span className={styles.skillItem}>Node.js</span>
-                <span className={styles.skillItem}>Photoshop</span>
-              </div>
+              <ul className={styles.skillList}>
+                {currentSkills.map((skill) => (
+                  <li key={skill} className={styles.skillItem}>{skill}</li>
+                ))}
+              </ul>
             </div>
           </div>
           <div className={classNames(styles.cardContainer, styles.todo)}>
             <div className={styles.skillCard}>
-              <h3 className={styles.cardTitle}>To Do</h3>
-              <div className={styles.skillList}>
-                <span className={styles.skillItem}>HTML/CSS</span>
-                <span className={styles.skillItem}>JavaScript ES6+</span>
-                <span className={styles.skillItem}>React</span>
-                <span className={styles.skillItem}>Node.js</span>
-                <span className={styles.skillItem}>Photoshop</span>
-              </div>
+              <h3 className={styles.cardTitle}>Still Learning</h3>
+              <ul className={styles.skillList}>
+                {toDoSkills.map((skill) => (
+                  <li key={skill} className={styles.skillItem}>{skill}</li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -54,41 +58,26 @@ const AboutPage = () => (
       <Body>
         <Heading subHeading>Experience</Heading>
         <div className={styles.expContainer}>
-          <div className={styles.expCard}>
-            <div className={styles.expInfo}>
-              <div className={styles.position}>
-                <h3>Wunderman</h3>
-                <span>Front End Developer</span>
+          {edges.map(({ node }) => (
+            <div key={node.id} className={styles.expCard}>
+              <div className={styles.expInfo}>
+                <div className={styles.position}>
+                  <h3>{node.title}</h3>
+                  <span>{node.role}</span>
+                </div>
+                <div className={styles.year}>
+                  {node.period}
+                </div>
               </div>
-              <div className={styles.year}>
-                2017 - 2019
-              </div>
-            </div>
-            <div className={styles.expDetails}>
-              <ul className={styles.roleList}>
-                <li>Developed and maintained websites for various clients</li>
-                <li>Developed HTML emails for sending out</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className={styles.expCard}>
-            <div className={styles.expInfo}>
-              <div className={styles.position}>
-                <h3>Wunderman</h3>
-                <span>Front End Developer</span>
-              </div>
-              <div className={styles.year}>
-                2017 - 2019
+              <div className={styles.expDetails}>
+                <ul className={styles.roleList}>
+                  {node.contributions.map((contribution, i) => (
+                    <li key={i} >{contribution}</li>
+                  ))}
+                </ul>
               </div>
             </div>
-            <div className={styles.expDetails}>
-              <ul className={styles.roleList}>
-                <li>Developed and maintained websites for various clients</li>
-                <li>Developed HTML emails for sending out</li>
-              </ul>
-            </div>
-          </div>
+          ))}
         </div>
       </Body>
     </section>
@@ -99,3 +88,37 @@ const AboutPage = () => (
 )
 
 export default AboutPage
+
+export const pageQuery = graphql`
+  query AboutQuery {
+    contentfulAboutPage {
+      title
+      description
+      about {
+        childMarkdownRemark {
+          html
+        }
+      }
+      currentSkills
+      toDoSkills
+    }
+
+    allContentfulExperience (
+      sort: {
+        fields: [startDate]
+        order: DESC
+      }
+    ) {
+      edges {
+        node {
+          id
+          title
+          role
+          startDate
+          period
+          contributions
+        }
+      }
+    }
+  }
+`

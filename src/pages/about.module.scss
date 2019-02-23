@@ -14,7 +14,7 @@
 
 .aboutDesc {
   color: white;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   max-width: $max-content-width;
   padding: 3rem 5rem;
   margin: 0 auto;
@@ -71,7 +71,11 @@
 }
 
 .skillList {
+  display: block;
+  text-align: center;
   padding: 2rem 1.5rem;
+  margin: 0;
+  list-style: none;
 }
 
 .skillItem {
