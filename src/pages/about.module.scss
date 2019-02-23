@@ -30,26 +30,36 @@
 .skillsContainer {
   display: flex;
   padding-top: 2rem;
+  flex-wrap: wrap;
 }
 
-.skillCard {
-  background-color: white;
-  box-shadow: 0px 0px 6px $colShadow;
-  margin: 1rem;
-  border-radius: 8px;
-  overflow: auto;
+.cardContainer {
+  padding: 1rem;
 
   &.current {
     flex-basis: 60%;
+
+    @media screen and (max-width: $breakpoint-sm) {
+      flex-basis: 100%;
+    }
   }
 
   &.todo {
     flex-basis: 40%;
 
-    .cardTitle {
-      background-color: $colAlt3;
+    @media screen and (max-width: $breakpoint-sm) {
+      flex-basis: 100%;
     }
   }
+  
+}
+
+.skillCard {
+  background-color: white;
+  box-shadow: 0px 0px 6px $colShadow;
+  border-radius: 8px;
+  overflow: auto;
+  height: 100%;
 }
 
 .cardTitle {
@@ -76,11 +86,12 @@
 .expSection {
   width: 100%;
   background-color: $colBG1;
-  padding: 2rem 0;
+  padding: 1rem 0 4rem;
 }
 
 .expContainer {
-  padding: 2rem 0;
+  position: relative;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,8 +102,12 @@
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0px 0px 6px $colShadow;
-  margin: 1rem;
+  margin: 1rem 0;
   width: 80%;
+
+  @media screen and (max-width: $breakpoint-sm) {
+    width: 100%;
+  }
 }
 
 .expInfo {
@@ -132,19 +147,19 @@
 }
 
 .contactSection {
-  background: linear-gradient(-90deg, $colMain, $colMain2);
-  background-color: $colMain;
+  background-color: white;
   width: 100%;
   padding: 5rem 2rem;
   text-align: center;
+  box-shadow: 0px 0px 6px $colShadow;
 }
 
 .contactDesc {
-  color: white;
+  color: $colText1;
   font-size: 2.4rem;
 
   span {
     font-weight: bold;
-    color: $colAlt1;
+    color: $colMain;
   }
 }

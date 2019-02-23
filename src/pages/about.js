@@ -18,29 +18,33 @@ const AboutPage = () => (
       <Body>
         <Heading subHeading>Skills</Heading>
         <div className={styles.skillsContainer}>
-          <div className={classNames(styles.skillCard, styles.current)}>
-            <h3 className={styles.cardTitle}>Experienced In</h3>
-            <div className={styles.skillList}>
-              <span className={styles.skillItem}>HTML/CSS</span>
-              <span className={styles.skillItem}>JavaScript ES6+</span>
-              <span className={styles.skillItem}>React</span>
-              <span className={styles.skillItem}>Node.js</span>
-              <span className={styles.skillItem}>Photoshop</span>
-              <span className={styles.skillItem}>HTML/CSS</span>
-              <span className={styles.skillItem}>JavaScript ES6+</span>
-              <span className={styles.skillItem}>React</span>
-              <span className={styles.skillItem}>Node.js</span>
-              <span className={styles.skillItem}>Photoshop</span>
+          <div className={classNames(styles.cardContainer, styles.current)}>
+            <div className={styles.skillCard}>
+              <h3 className={styles.cardTitle}>Experienced In</h3>
+              <div className={styles.skillList}>
+                <span className={styles.skillItem}>HTML/CSS</span>
+                <span className={styles.skillItem}>JavaScript ES6+</span>
+                <span className={styles.skillItem}>React</span>
+                <span className={styles.skillItem}>Node.js</span>
+                <span className={styles.skillItem}>Photoshop</span>
+                <span className={styles.skillItem}>HTML/CSS</span>
+                <span className={styles.skillItem}>JavaScript ES6+</span>
+                <span className={styles.skillItem}>React</span>
+                <span className={styles.skillItem}>Node.js</span>
+                <span className={styles.skillItem}>Photoshop</span>
+              </div>
             </div>
           </div>
-          <div className={classNames(styles.skillCard, styles.todo)}>
-            <h3 className={styles.cardTitle}>To Do</h3>
-            <div className={styles.skillList}>
-              <span className={styles.skillItem}>HTML/CSS</span>
-              <span className={styles.skillItem}>JavaScript ES6+</span>
-              <span className={styles.skillItem}>React</span>
-              <span className={styles.skillItem}>Node.js</span>
-              <span className={styles.skillItem}>Photoshop</span>
+          <div className={classNames(styles.cardContainer, styles.todo)}>
+            <div className={styles.skillCard}>
+              <h3 className={styles.cardTitle}>To Do</h3>
+              <div className={styles.skillList}>
+                <span className={styles.skillItem}>HTML/CSS</span>
+                <span className={styles.skillItem}>JavaScript ES6+</span>
+                <span className={styles.skillItem}>React</span>
+                <span className={styles.skillItem}>Node.js</span>
+                <span className={styles.skillItem}>Photoshop</span>
+              </div>
             </div>
           </div>
         </div>
