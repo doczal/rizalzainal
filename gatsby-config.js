@@ -22,7 +22,7 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     title: `Rizal Zainal`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `I am Rizal Zainal, Front End Developer. Check out some of my work.`,
     author: `Rizal Zainal`,
     navLinks: [{
       name: `Projects`,

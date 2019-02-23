@@ -17,6 +17,9 @@ const IndexPage = ({
   },
 }) => (
   <Layout>
+    <SEO
+      title="Projects"
+    />
     <div className={styles.hero}>
       <div className={styles.heroContainer}>
         <div className={styles.mainDescription}>

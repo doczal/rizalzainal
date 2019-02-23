@@ -23,6 +23,9 @@ const AboutPage = ({
   },
 }) => (
   <Layout>
+    <SEO
+      title={title}
+    />
     <header className={styles.aboutHeader}>
       <Heading alt>About</Heading>
       <p className={styles.aboutDesc}>{about.childMarkdownRemark.html}</p>

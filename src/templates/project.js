@@ -5,11 +5,13 @@ import styles from './project.module.scss'
 import Layout from '../components/layout'
 import Heading from '../components/heading'
 import Body from '../components/body'
+import SEO from '../components/seo'
 
 const Project = ({
   data: {
     contentfulProject: {
       title,
+      description,
       date,
       projectType,
       tools,
@@ -18,6 +20,10 @@ const Project = ({
   },
 }) => (
   <Layout>
+    <SEO
+      title={title}
+      description={description}
+    />
     <header className={styles.projectHeader}>
       <Heading alt>{title}</Heading>
       <div className={styles.projectInfo}>
@@ -58,6 +64,7 @@ export const pageQuery = graphql`
   query ProjectBySlug($slug: String!) {
     contentfulProject(slug: { eq: $slug }) {
       title
+      description
       date(formatString: "YYYY")
       projectType
       tools
