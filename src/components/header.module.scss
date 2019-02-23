@@ -37,8 +37,30 @@
   text-transform: uppercase;
 }
 
+
+
 .navLink {
   padding: 0 1rem;
   color: white;
   text-decoration: none;
+  position: relative;
+
+  transition: 0.2s ease-out color;
+  &:hover {
+    color: $colAlt2;
+  }
+
+  &.active {
+    &::after {
+      display: block;
+      position: absolute;
+      content: '';
+      bottom: -0.6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 4px;
+      background-color: $colAlt1;
+    }
+  }
 }

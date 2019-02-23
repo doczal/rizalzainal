@@ -26,7 +26,7 @@ module.exports = {
     author: `Rizal Zainal`,
     navLinks: [{
       name: `Projects`,
-      slug: `#projects`,
+      slug: ``,
     }, {
       name: `About`,
       slug: `about`,

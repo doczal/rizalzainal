@@ -41,11 +41,20 @@ class Header extends Component {
       <header className={classNames(styles.header, scroll ? styles.scroll : null)}>
         <div className={styles.container}>
           <div className={styles.logoContainer}>
-            <img src={logo} alt="Rizal Logo" className={styles.logo}/>
+            <Link to="/">
+              <img src={logo} alt="Rizal Logo" className={styles.logo}/>
+            </Link>
           </div>
           <nav className={styles.navLinks}>
             {navLinks.map((navLink) => (
-              <Link key={navLink.slug} className={styles.navLink} to={`/${ navLink.slug }`}>{navLink.name}</Link>
+              <Link
+                key={navLink.slug}
+                activeClassName={styles.active}
+                className={styles.navLink}
+                to={`${ navLink.slug }`}
+              >
+                {navLink.name}
+              </Link>
             ))}
           </nav>
         </div>
