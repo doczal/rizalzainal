@@ -12,6 +12,8 @@ const Project = ({
     contentfulProject: {
       title,
       description,
+      projectUrl,
+      sourceUrl,
       date,
       projectType,
       tools,
@@ -42,8 +44,8 @@ const Project = ({
           </div>
         </div>
         <div className={styles.projectLinks}>
-          <a className={styles.projectLink} href="#">View Project</a>
-          <a className={styles.projectLink} href="#">View Source</a>
+          {projectUrl ? <a className={styles.projectLink} href={projectUrl}>View Project</a> : null}
+          {sourceUrl ? <a className={styles.projectLink} href={sourceUrl}>View Source</a> : null}
         </div>
       </div>
     </header>
@@ -65,6 +67,8 @@ export const pageQuery = graphql`
     contentfulProject(slug: { eq: $slug }) {
       title
       description
+      projectUrl
+      sourceUrl
       date(formatString: "YYYY")
       projectType
       tools

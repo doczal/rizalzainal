@@ -109,18 +109,38 @@ $breakpoint-1: 960px;
 }
 
 .content {
-  padding: 1.5rem;
+  padding: 2rem 1.5rem 4rem;
+
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
 
   & > p {
     font-size: 2rem;
     color: $colText3;
+    margin: 2.4rem 0;
+
+    @media screen and (max-width: $breakpoint-sm) {
+      font-size: 1.8rem;
+    }
+  }
+
+  a {
+    display: inline-block;
   }
 
   img {
+    display: block;
     max-width: 100%;
   }
 
-  iframe {
-    width: 100%;
+  em {
+    font-size: 1.6rem;
+    display: block;
+    margin: 0.6rem 0;
   }
 }
