@@ -61,7 +61,7 @@
     font-size: 3.2rem;
   }
 
-  @media screen and (max-width: $breakpoint-sm) {
+  @media screen and (max-width: $breakpoint-xs) {
     font-size: 2.8rem;
   }
 }
@@ -69,7 +69,7 @@
 .subHeadline {
   font-size: 1.8rem;
 
-  @media screen and (max-width: $breakpoint-sm) {
+  @media screen and (max-width: $breakpoint-xs) {
     font-size: 1.6rem;
   }
 }

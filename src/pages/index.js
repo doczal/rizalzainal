@@ -51,43 +51,28 @@ const IndexPage = ({
 
 export default IndexPage
 
-IndexPage.propTypes = {
-  data: PropTypes.shape({
-    allContentfulProject: PropTypes.shape({
-      edges: PropTypes.arrayOf(PropTypes.shape({
-        node: PropTypes.shape({
-          id: PropTypes.string.isRequired,
-          title: PropTypes.string.isRequired,
-          thumbnail: PropTypes.shape({
-            description: PropTypes.string.isRequired,
-            file: PropTypes.shape({
-              url: PropTypes.string.isRequired,
-            }).isRequired,
-          }).isRequired,
-          description: PropTypes.string.isRequired,
-          tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-        }).isRequired,
-      })).isRequired,
-    }).isRequired,
-  }).isRequired,
-}
-
 export const pageQuery = graphql`
   query ProjectsQuery {
-    allContentfulProject {
+    allContentfulProject (
+      sort: {
+        fields: [date]
+        order: DESC
+      }
+    ) {
       edges {
         node {
-          id,
-          title,
-          slug,
+          id
+          title
+          slug
+          date
           thumbnail {
             description,
             file {
-              url,
-            },
-          },
-          description,
-          tags,
+              url
+            }
+          }
+          description
+          tags
         }
       }
     }
