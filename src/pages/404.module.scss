@@ -1,0 +1,36 @@
+@import '../styles/globals.scss';
+@import '../styles/colors.scss';
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, $colMain, $colMain2);
+  background-color: $colMain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message {
+  text-align: center;
+  padding: 2rem 3rem;
+  color: white;
+
+  h1 {
+    font-size: 3.6rem;
+
+    span {
+      color: $colAlt1;
+    }
+  }
+
+  p {
+    font-size: 2.4rem;
+  }
+}
+
+.questionMark {
+  display: block;
+  width: 100%;
+}

@@ -136,11 +136,24 @@ $breakpoint-1: 960px;
   img {
     display: block;
     max-width: 100%;
+    border: 1px solid $colBorder;
   }
 
   em {
     font-size: 1.6rem;
     display: block;
-    margin: 0.6rem 0;
+    padding: 0.5rem 0 1rem;
+  }
+
+  ul, ol {
+    font-size: 2rem;
+
+    li {
+      padding-bottom: 0.8rem;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-sm) {
+    font-size: 1.8rem;
   }
 }
