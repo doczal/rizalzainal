@@ -28,7 +28,10 @@ const AboutPage = ({
     />
     <header className={styles.aboutHeader}>
       <Heading alt>About</Heading>
-      <p className={styles.aboutDesc}>{about.childMarkdownRemark.html}</p>
+      <div
+        dangerouslySetInnerHTML={{ __html: about.childMarkdownRemark.html }}
+        className={styles.aboutDesc}
+      />
     </header>
     <section className={styles.skillsSection}>
       <Body>
@@ -46,7 +49,7 @@ const AboutPage = ({
           </div>
           <div className={classNames(styles.cardContainer, styles.todo)}>
             <div className={styles.skillCard}>
-              <h3 className={styles.cardTitle}>Still Learning</h3>
+              <h3 className={styles.cardTitle}>Work In Progress</h3>
               <ul className={styles.skillList}>
                 {toDoSkills.map((skill) => (
                   <li key={skill} className={styles.skillItem}>{skill}</li>

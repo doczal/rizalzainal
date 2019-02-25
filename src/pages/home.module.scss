@@ -30,7 +30,7 @@
 
 .mainDescription {
   flex-basis: 60%;
-  padding: 8rem 12rem 8rem 6rem;
+  padding: 8rem 16rem 8rem 6rem;
   color: white;
 
   @media screen and (max-width: $breakpoint-md) {
@@ -67,10 +67,12 @@
 }
 
 .subHeadline {
-  font-size: 1.8rem;
+  font-size: 2rem;
+  line-height: 2.8rem;
 
   @media screen and (max-width: $breakpoint-xs) {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
   }
 }
 

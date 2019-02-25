@@ -24,7 +24,7 @@ const IndexPage = ({
       <div className={styles.heroContainer}>
         <div className={styles.mainDescription}>
           <h1 className={styles.headline}>I am <span>Rizal Zainal</span>,<br/>Front End Developer.</h1>
-          <p className={styles.subHeadline}>The grand plan for this bla bla bla bla blaz bla bla bla lorem ipsum.</p>
+          <p className={styles.subHeadline}>I build things for the web and dabble in design. Check out my stuff below!</p>
         </div>
       </div>
     </div>
