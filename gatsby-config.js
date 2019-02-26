@@ -29,7 +29,7 @@ module.exports = {
       slug: ``,
     }, {
       name: `About`,
-      slug: `about`,
+      slug: `about/`,
     }],
   },
   plugins: [
